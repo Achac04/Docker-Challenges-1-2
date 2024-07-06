@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  nginx:
+    # to expose the html page
+    build:
+      context: ../challenge1/ # path to the dockerfile
+    ports:
+      - "8080:80" # map port 8080 to port 80
+  api:
+    # to expose the api
+    build:
+      context: . # path to the dockerfile
+    ports:
+      - "8000:3000" # map port 8000 to port 3000
